@@ -4,7 +4,7 @@ public class SquareEquation
     public static double[] Solve(double a, double b, double c)
     {
         double epsilon=1e-9;
-        if (epsilon < a && a < epsilon)
+        if (-epsilon < a && a < epsilon)
         {
             throw new ArgumentException();
         }
