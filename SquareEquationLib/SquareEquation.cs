@@ -11,16 +11,14 @@ public class SquareEquation
         double x1;
         double x2;  
         double[] array = new double[2];
-        b=b/a;
-        c=c/a;
-        double d = b * b - 4  * c;
-        if (d < -double.Epsilon)
+        double d = b * b - 4 *a* c;
+        if (d <= -double.Epsilon)
         {
             array = new double[0];
         }
         if (Math.Abs(d)<double.Epsilon)
         {
-             x1 =-b/2;
+             x1 =-b/2*a;
              array = new double[] { x1 };
         }
         if (d>0)
