@@ -4,7 +4,7 @@ public class SquareEquation
 {
     public static double[] Solve(double a, double b, double c)
     {
-        if (-double.Epsilon<a && a<double.Epsilon)
+        if (-double.Epsilon < a && a < double.Epsilon)
         {
             throw new System.ArgumentException();
         }
@@ -14,8 +14,8 @@ public class SquareEquation
         }
         double d=b * b - 4 * a * c;
         double[] array1 = new double[] { };
-        if (d <= -eps) return array1;
-        else if (-eps < d && d < eps)
+        if (d <= -double.Epsilon) return array1;
+        else if (-double.Epsilon < d && d < double.Epsilon)
         { 
             double[] array2 = new double[1];
             array2[0] = -(b) / 2*a;
