@@ -12,7 +12,7 @@ public class SquareEquation
         double x2;  
         double[] array = new double[2];
         double d = b * b - 4 * a * c;
-        if (d < 0)
+        if (d < -double.Epsilon)
         {
             array = new double[0];
         }
