@@ -16,18 +16,18 @@ public class SquareEquation
         double d = b * b - 4*a* c;
         if (d <= -double.Epsilon)
         {
-            return array1
+            return array1;
         }
         if (-double.Epsilon < d && d < double.Epsilon)
         {
              array2[0]=-b/2*a;
-             return array2
+             return array2;
         }
         if (d>0)
         {
             array3[0] = -(b+Math.Sign(b)*Math.Sqrt(d))/2;
             array3[1] = c / array3[0];
-            return array3
+            return array3;
         }
     }
 }
