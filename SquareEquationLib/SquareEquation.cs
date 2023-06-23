@@ -9,16 +9,18 @@ public class SquareEquation
             throw new ArgumentException("Ошибка");
         }
         double x1;
-        double x2;  
+        double x2;
+        b=b/a;
+        c=c/a;
         double[] array = new double[2];
-        double d = b * b - 4 *a* c;
+        double d = b * b - 4* c;
         if (d <= -double.Epsilon)
         {
             array = new double[0];
         }
         if (-double.Epsilon < d && d < double.Epsilon)
         {
-             x1 =-b/2*a;
+             x1 =-b/2;
              array = new double[] { x1 };
         }
         if (d>0)
