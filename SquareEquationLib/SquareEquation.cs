@@ -18,7 +18,7 @@ public class SquareEquation
         }
         if (Math.Abs(d)<double.Epsilon)
         {
-             x1 =2*c/-b;
+             x1 =-b/2*a;
              array = new double[] { x1 };
         }
         if (d>0)
