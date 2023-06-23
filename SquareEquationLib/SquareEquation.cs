@@ -4,7 +4,11 @@ public class SquareEquation
 {
     public static double[] Solve(double a, double b, double c)
     {
-        if (a==0 || new[] { a, b, c }.Any(double.IsNaN) || new[] { a, b, c }.Any(double.IsInfinity))
+        if (-double.Epsilon<a && a<double.Epsilon)
+        {
+            throw new System.ArgumentException();
+        }
+        if ( new[] { a, b, c }.Any(double.IsNaN) || new[] { a, b, c }.Any(double.IsInfinity))
         {
             throw new  System.ArgumentException();
         }
