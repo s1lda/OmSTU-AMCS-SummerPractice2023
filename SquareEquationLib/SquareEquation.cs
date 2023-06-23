@@ -6,11 +6,11 @@ public class SquareEquation
         double epsilon=1e-9;
         if (epsilon < a && a < epsilon)
         {
-            throw new System.ArgumentException();
+            throw new ArgumentException();
         }
         if ( new[] { a, b, c }.Any(double.IsNaN) || new[] { a, b, c }.Any(double.IsInfinity))
         {
-            throw new  System.ArgumentException();
+            throw new ArgumentException();
         }
         b=b/a;
         c=c/a;
