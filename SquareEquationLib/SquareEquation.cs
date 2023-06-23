@@ -13,7 +13,7 @@ public class SquareEquation
         double[] array = new double[2];
         b=b/a;
         c=c/a;
-        double d = b * b - 4 * a * c;
+        double d = b * b - 4  * c;
         if (d < -double.Epsilon)
         {
             array = new double[0];
