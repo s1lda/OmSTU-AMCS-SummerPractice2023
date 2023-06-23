@@ -23,8 +23,8 @@ public class SquareEquation
         }
         if (d>0)
         {
-            x1 = (2*c)/-(b+Math.Sign(b)*Math.Sqrt(d));
-            x2 = c /a* x1;
+            x1 = -(b+Math.Sign(b)*Math.Sqrt(d))/2;
+            x2 = c / x1;
             array = new double[] { x1, x2 };
         }
         return array;
