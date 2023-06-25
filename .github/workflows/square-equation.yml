@@ -14,7 +14,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: 7.0.x
+          dotnet-version: 6.0.x
 
       - name: Restore dependencies
         run: dotnet restore SquareEquationLib && dotnet restore SquareEquationLib.Tests
@@ -23,13 +23,10 @@ jobs:
         run: dotnet build SquareEquationLib --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: Test
-        run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
+        run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net6.0/SquareEquationLib.dll
 
       - name: Build2
         run: dotnet build SquareEquationLib.Tests
 
       - name: Testing
-        run: dotnet test SquareEquationLib.Tests
-
-      - name: Codecov
-        uses: codecov/codecov-action@v1
+        run: dotnet test SquareEquationLib.Tests --collect:"XPlat Code Coverage"
