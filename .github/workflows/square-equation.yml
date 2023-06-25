@@ -11,16 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup .NET6
+      - name: Setup .NET
         uses: actions/setup-dotnet@v2
         with:
-        dotnet-version: 6.0.x
-        
-        -name: Setup .NET7
-         uses: actions/setup-dotnet@v2
-         with:
-         dotnet-version: 7.0.x
-          
+          dotnet-version: 6.0.x
 
       - name: Restore dependencies
         run: dotnet restore SquareEquationLib && dotnet restore SquareEquationLib.Tests
@@ -29,7 +23,7 @@ jobs:
         run: dotnet build SquareEquationLib --no-restore /p:ContinuousIntegrationBuild=true
 
       - name: Test
-        run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net7.0/SquareEquationLib.dll
+        run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net6.0/SquareEquationLib.dll
 
       - name: Build2
         run: dotnet build SquareEquationLib.Tests
