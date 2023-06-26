@@ -36,3 +36,6 @@ jobs:
           files: ./SquareEquationLib.Tests/TestResults/**/coverage.cobertura.xml
           name: codecov-umbrella
           fail_ci_if_error: true
+      - name: Unittest and coverage
+        run: dotnet test /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
+        
