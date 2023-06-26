@@ -1,4 +1,4 @@
-name: square equation test
+name: Square equation test
 
 on:
   push:
@@ -17,25 +17,10 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Restore dependencies
-        run: dotnet restore SquareEquationLib && dotnet restore SquareEquationLib.Tests
+        run: dotnet restore SquareEquationLib/
 
       - name: Build
-        run: dotnet build SquareEquationLib --no-restore /p:ContinuousIntegrationBuild=true
+        run: dotnet build SquareEquationLib/ --no-restore /p:ContinuousIntegrationBuild=true
 
-      - name: Test
-        run: ./SquareEquationTest ./SquareEquationLib/bin/Debug/net6.0/SquareEquationLib.dll
-
-      - name: Build2
-        run: dotnet build SquareEquationLib.Tests
-
-      - name: Testing
-        run: dotnet test SquareEquationLib.Tests --collect:"XPlat Code Coverage"
-      - name: Coverage
-        uses: codecov/codecov-action@v1.2.0
-        with:
-          files: ./SquareEquationLib.Tests/TestResults/**/coverage.cobertura.xml
-          name: codecov-umbrella
-          fail_ci_if_error: true
       - name: Unittest and coverage
         run: dotnet test /p:CollectCoverage=true /p:ThresholdType=line /p:Threshold=100
-        
