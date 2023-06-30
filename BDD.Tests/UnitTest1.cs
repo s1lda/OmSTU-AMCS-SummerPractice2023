@@ -8,7 +8,7 @@ using System;
     {
         private double[] coefficients = new double[3];
         private double[]? roots;
-        private Exception exception = new(); 
+        private Exception exception = new();
         private double precision = 0.001;
 
 
@@ -74,9 +74,3 @@ using System;
         
     }
 
-    {
-        Assert.Equal("Invalid Values", exception.Message);
-    }
-
-
-}
