@@ -11,37 +11,37 @@ namespace spacebattletests.StepDefinitions
         int[]? actual_coordinates;
         Exception exception = new Exception();
 
-        [Given(@"космический корабль находится в точке пространства с координатами \((.*), (.*)\)")]
+        [Given(@"РєРѕСЃРјРёС‡РµСЃРєРёР№ РєРѕСЂР°Р±Р»СЊ РЅР°С…РѕРґРёС‚СЃСЏ РІ С‚РѕС‡РєРµ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІР° СЃ РєРѕРѕСЂРґРёРЅР°С‚Р°РјРё \((.*), (.*)\)")]
         public void GivenCoordinates(int p0, int p1)
         {
             spaceship.SetCoordinates(p0, p1);
         }
 
-        [Given(@"имеет мгновенную скорость \((.*), (.*)\)")]
+        [Given(@"РёРјРµРµС‚ РјРіРЅРѕРІРµРЅРЅСѓСЋ СЃРєРѕСЂРѕСЃС‚СЊ \((.*), (.*)\)")]
         public void GivenSpeedVector(int p0, int p1)
         {
             spaceship.SetSpeedVector(p0, p1);
         }
 
-        [Given(@"космический корабль, положение в пространстве которого невозможно определить")]
+        [Given(@"РєРѕСЃРјРёС‡РµСЃРєРёР№ РєРѕСЂР°Р±Р»СЊ, РїРѕР»РѕР¶РµРЅРёРµ РІ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµ РєРѕС‚РѕСЂРѕРіРѕ РЅРµРІРѕР·РјРѕР¶РЅРѕ РѕРїСЂРµРґРµР»РёС‚СЊ")]
         public void GivenImpossibleCoordinates()
         {
 
         }
 
-        [Given(@"скорость корабля определить невозможно")]
+        [Given(@"СЃРєРѕСЂРѕСЃС‚СЊ РєРѕСЂР°Р±Р»СЏ РѕРїСЂРµРґРµР»РёС‚СЊ РЅРµРІРѕР·РјРѕР¶РЅРѕ")]
         public void GivenImpossibleSpeedVector()
         {
 
         }
 
-        [Given(@"изменить положение в пространстве космического корабля невозможно")]
+        [Given(@"РёР·РјРµРЅРёС‚СЊ РїРѕР»РѕР¶РµРЅРёРµ РІ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІРµ РєРѕСЃРјРёС‡РµСЃРєРѕРіРѕ РєРѕСЂР°Р±Р»СЏ РЅРµРІРѕР·РјРѕР¶РЅРѕ")]
         public void GivenImpossibleAction()
         {
             spaceship.CannotAction();
         }
 
-        [When(@"происходит прямолинейное равномерное движение без деформации")]
+        [When(@"РїСЂРѕРёСЃС…РѕРґРёС‚ РїСЂСЏРјРѕР»РёРЅРµР№РЅРѕРµ СЂР°РІРЅРѕРјРµСЂРЅРѕРµ РґРІРёР¶РµРЅРёРµ Р±РµР· РґРµС„РѕСЂРјР°С†РёРё")]
         public void WhenMovingAction()
         {
             try
@@ -54,13 +54,13 @@ namespace spacebattletests.StepDefinitions
             }
         }
 
-        [Then(@"космический корабль перемещается в точку пространства с координатами \((.*), (.*)\)")]
+        [Then(@"РєРѕСЃРјРёС‡РµСЃРєРёР№ РєРѕСЂР°Р±Р»СЊ РїРµСЂРµРјРµС‰Р°РµС‚СЃСЏ РІ С‚РѕС‡РєСѓ РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІР° СЃ РєРѕРѕСЂРґРёРЅР°С‚Р°РјРё \((.*), (.*)\)")]
         public void ThenSpaceshipMovingToCoordinates(int p0, int p1)
         {
             Assert.Equal(new int[] { p0, p1 }, actual_coordinates);
         }
 
-        [Then(@"возникает ошибка Exception")]
+        [Then(@"РІРѕР·РЅРёРєР°РµС‚ РѕС€РёР±РєР° Exception")]
         public void ThenThrowsException()
         {
             Assert.Equal("coordinates or speed vector was null", exception.Message);
