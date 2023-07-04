@@ -86,7 +86,7 @@ namespace SpaceCadets
                 else if (taskName == "CalculateGPAByDiscipline")
                 {
                     var averageMarksByDiscipline = cadets.GroupBy(c => c.Discipline)
-                                                         .Select(g => new JObject(new JProperty(g.Key, g.Average(c => c.Mark).ToString())))
+                                                         .Select(g => new JObject(new JProperty(g.Key, g.Average(c => c.Mark))))
                                                          .ToList();
 
                     JObject gpaByDisciplineData = new JObject(new JProperty("Response", new JArray(averageMarksByDiscipline)));
